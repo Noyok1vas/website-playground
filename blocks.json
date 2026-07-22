@@ -1,0 +1,10 @@
+[
+  { "src": "https://picsum.photos/id/1015/800/1000", "w": 800, "h": 1000, "name": "Sune", "desc": "Wearable concept" },
+  { "src": "https://picsum.photos/id/1025/800/1100", "w": 800, "h": 1100, "name": "Flow System", "desc": "Experience design" },
+  { "src": "https://picsum.photos/id/1039/800/600",  "w": 800, "h": 600,  "name": "Between Us", "desc": "Interaction study" },
+  { "src": "https://picsum.photos/id/1043/800/1200", "w": 800, "h": 1200, "name": "Vessel", "desc": "Product exterior" },
+  { "src": "https://picsum.photos/id/1050/800/800",  "w": 800, "h": 800,  "name": "Halo", "desc": "Concept lead" },
+  { "src": "https://picsum.photos/id/1062/800/1000", "w": 800, "h": 1000, "name": "Drift", "desc": "Design research" },
+  { "src": "https://picsum.photos/id/1074/800/900",  "w": 800, "h": 900,  "name": "Quiet", "desc": "Form study" },
+  { "src": "https://picsum.photos/id/1084/800/1100", "w": 800, "h": 1100, "name": "Ember", "desc": "Strategic design" }
+]
