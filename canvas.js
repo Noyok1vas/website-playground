@@ -14,7 +14,7 @@
 
   /* ---------- Config ---------- */
   const BLOCKS_URL =
-    "https://cdn.jsdelivr.net/gh/Noyok1vas/website-playground@main/blocks.json";
+    "https://raw.githubusercontent.com/Noyok1vas/website-playground/main/blocks.json";
   const COL_WIDTH = 300;      // px, width of one masonry column
   const GUTTER = 24;          // px, gap between blocks
   const FRICTION = 0.92;      // momentum decay per frame (0.9 loose … 0.95 slippery)
