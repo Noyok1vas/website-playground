@@ -25,9 +25,9 @@
     { src: "https://cdn.prod.website-files.com/69954c8c0f8eb8435c19885c/6a615bfc09a38d01e4350854_Playground-5.png", w: 1000, h: 1000, name: "Collage-04",          desc: "2025 | Form Study" },
     { src: "https://cdn.prod.website-files.com/69954c8c0f8eb8435c19885c/6a615bfcf595ae3342bedd93_Playground-6.png", w: 1000, h: 1000, name: "Nijimu",              desc: "2026 | Website, Interactive Experience" },
     { src: "https://cdn.prod.website-files.com/69954c8c0f8eb8435c19885c/6a615bfccde09d40acc84507_Playground-7.png", w: 1000, h: 1000, name: "Orbit of Emotion",    desc: "2025 | Interactive Experience" },
-    { src: "https://cdn.prod.website-files.com/69954c8c0f8eb8435c19885c/6a615bfc48003d2a684b4_Playground-8.png",   w: 1000, h: 1500, name: "Speedform",            desc: "2025 | Form Study" },
+    { src: "https://cdn.prod.website-files.com/69954c8c0f8eb8435c19885c/6a615bfd5d480003d2a684b4_Playground-8.png",   w: 1000, h: 1500, name: "Speedform",            desc: "2025 | Form Study" },
     { src: "https://cdn.prod.website-files.com/69954c8c0f8eb8435c19885c/6a615bfca6e0c118244768d1_Playground-9.png",w: 1000, h: 1500, name: "Collage-01",           desc: "Photography" },
-    { src: "https://cdn.prod.website-files.com/69954c8c0f8eb8435c19885c/6a615bfc6fb79d9b5b6c1ff3761_Playground-10.png", w: 1000, h: 1500, name: "Collage-02",      desc: "Photography" },
+    { src: "https://cdn.prod.website-files.com/69954c8c0f8eb8435c19885c/6a615bfd79d9b5b6c1ff3761_Playground-10.png", w: 1000, h: 1500, name: "Collage-02",      desc: "Photography" },
     { src: "https://cdn.prod.website-files.com/69954c8c0f8eb8435c19885c/6a615bfcc57d9851e84de2a5_Playground-11.png",   w: 1000, h: 1500, name: "Collage-03",       desc: "Photography" },
     { src: "https://cdn.prod.website-files.com/69954c8c0f8eb8435c19885c/6a615bfc43e1172472097e6f_Playground-12.png",  w: 1000, h: 1500, name: "Vroom-vroom",       desc: "2025 | Formula-e RC Car" }
   ];
