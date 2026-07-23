@@ -30,7 +30,7 @@
     { src: "https://cdn.prod.website-files.com/69954c8c0f8eb8435c19885c/6a615bfd79d9b5b6c1ff3761_Playground-10.png",  w: 1000, h: 1500, name: "Collage-02",          desc: "Photography",                            url: "#" },
     { src: "https://cdn.prod.website-files.com/69954c8c0f8eb8435c19885c/6a615bfcc57d9851e84de2a5_Playground-11.png",  w: 1000, h: 1500, name: "Collage-03",          desc: "Photography",                            url: "#" },
     { src: "https://cdn.prod.website-files.com/69954c8c0f8eb8435c19885c/6a615bfc43e1172472097e6f_Playground-12.png",  w: 1000, h: 1500, name: "Vroom-vroom",         desc: "2025 | Formula-e RC Car",                url: "#" },
-    { src: "https://cdn.prod.website-files.com/69954c8c0f8eb8435c19885c/6a61df0883fdca4fd1e924cc_Playground-13.png",  w: 1000, h: 1000, name: "Between Us",          desc: "2025 | Scent Branding",                  url: "yokis.space/playground/betweenus" }
+    { src: "https://cdn.prod.website-files.com/69954c8c0f8eb8435c19885c/6a61df0883fdca4fd1e924cc_Playground-13.png",  w: 1000, h: 1000, name: "Between Us",          desc: "2025 | Scent Branding",                  url: "https://yokis.space/playground/betweenus" }
   ];
 
   /* ---------- Config ---------- */
