@@ -186,9 +186,7 @@
 
     if (seed.url) {
       el.style.cursor = "pointer";
-      el.addEventListener("pointerup", function () {
-        // A drag ends with a click event too — only navigate on a clean tap.
-        if (moved) return;
+      el.addEventListener("click", function () {
         if (seed.newTab) {
           window.open(seed.url, "_blank", "noopener");
         } else {
@@ -239,9 +237,6 @@
 
   /* ---------- Input ---------- */
   function bindEvents() {
-    mount.addEventListener("pointerdown", onDown);
-    window.addEventListener("pointermove", onMove);
-    window.addEventListener("pointerup", onUp);
     mount.addEventListener("wheel", onWheel, { passive: false });
     window.addEventListener("resize", () => { fill(); recycle(); });
   }
@@ -332,7 +327,7 @@
     const css = `
       #playground-canvas {
         position: fixed; inset: 0; overflow: hidden;
-        touch-action: none; cursor: grab; background: #141414;
+        touch-action: none; cursor: default; background: #141414;
         user-select: none; -webkit-user-select: none;
       }
       .pg-world {
