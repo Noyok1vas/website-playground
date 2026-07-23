@@ -18,18 +18,18 @@
      w/h = original image dimensions (ratio must be correct).
      ========================================================== */
   const SEED_DATA = [
-    { src: "https://cdn.prod.website-files.com/69954c8c0f8eb8435c19885c/6a615bfd5d480003d2a684b1_Playground-1.png",  w: 1000, h: 1000, name: "Ossyn",               desc: "2024 | Lighting" },
-    { src: "https://cdn.prod.website-files.com/69954c8c0f8eb8435c19885c/6a615bfc4744edda3224da25_Playground-2.png", w: 1000, h: 1000, name: "Morph",               desc: "2025 | Bluetooth Mouse" },
-    { src: "https://cdn.prod.website-files.com/69954c8c0f8eb8435c19885c/6a615bfc409f1fdb7f5d3609_Playground-3.png", w: 1000, h: 1000, name: "Soma",                desc: "2025 | CMF Strategy" },
-    { src: "https://cdn.prod.website-files.com/69954c8c0f8eb8435c19885c/6a615bfc22dad98433ad5e54_Playground-4.png", w: 1000, h: 1000, name: "YANG Design CMF Lab", desc: "2024 | CMF Internship" },
-    { src: "https://cdn.prod.website-files.com/69954c8c0f8eb8435c19885c/6a615bfc09a38d01e4350854_Playground-5.png", w: 1000, h: 1000, name: "Collage-04",          desc: "2025 | Form Study" },
-    { src: "https://cdn.prod.website-files.com/69954c8c0f8eb8435c19885c/6a615bfcf595ae3342bedd93_Playground-6.png", w: 1000, h: 1000, name: "Nijimu",              desc: "2026 | Website, Interactive Experience" },
-    { src: "https://cdn.prod.website-files.com/69954c8c0f8eb8435c19885c/6a615bfccde09d40acc84507_Playground-7.png", w: 1000, h: 1000, name: "Orbit of Emotion",    desc: "2025 | Interactive Experience" },
-    { src: "https://cdn.prod.website-files.com/69954c8c0f8eb8435c19885c/6a615bfd5d480003d2a684b4_Playground-8.png",   w: 1000, h: 1500, name: "Speedform",            desc: "2025 | Form Study" },
-    { src: "https://cdn.prod.website-files.com/69954c8c0f8eb8435c19885c/6a615bfca6e0c118244768d1_Playground-9.png",w: 1000, h: 1500, name: "Collage-01",           desc: "Photography" },
-    { src: "https://cdn.prod.website-files.com/69954c8c0f8eb8435c19885c/6a615bfd79d9b5b6c1ff3761_Playground-10.png", w: 1000, h: 1500, name: "Collage-02",      desc: "Photography" },
-    { src: "https://cdn.prod.website-files.com/69954c8c0f8eb8435c19885c/6a615bfcc57d9851e84de2a5_Playground-11.png",   w: 1000, h: 1500, name: "Collage-03",       desc: "Photography" },
-    { src: "https://cdn.prod.website-files.com/69954c8c0f8eb8435c19885c/6a615bfc43e1172472097e6f_Playground-12.png",  w: 1000, h: 1500, name: "Vroom-vroom",       desc: "2025 | Formula-e RC Car" }
+    { src: "https://cdn.prod.website-files.com/69954c8c0f8eb8435c19885c/6a615bfd5d480003d2a684b1_Playground-1.png",   w: 1000, h: 1000, name: "Ossyn",               desc: "2024 | Lighting",                        url: "https://weieach.github.io/nijimu/" },
+    { src: "https://cdn.prod.website-files.com/69954c8c0f8eb8435c19885c/6a615bfc4744edda3224da25_Playground-2.png",   w: 1000, h: 1000, name: "Morph",               desc: "2025 | Bluetooth Mouse",                 url: "#" },
+    { src: "https://cdn.prod.website-files.com/69954c8c0f8eb8435c19885c/6a615bfc409f1fdb7f5d3609_Playground-3.png",   w: 1000, h: 1000, name: "Soma",                desc: "2025 | CMF Strategy",                    url: "#" },
+    { src: "https://cdn.prod.website-files.com/69954c8c0f8eb8435c19885c/6a615bfc22dad98433ad5e54_Playground-4.png",   w: 1000, h: 1000, name: "YANG Design CMF Lab", desc: "2024 | CMF Internship",                  url: "#" },
+    { src: "https://cdn.prod.website-files.com/69954c8c0f8eb8435c19885c/6a615bfc09a38d01e4350854_Playground-5.png",   w: 1000, h: 1000, name: "Collage-04",          desc: "2025 | Form Study",                      url: "#" },
+    { src: "https://cdn.prod.website-files.com/69954c8c0f8eb8435c19885c/6a615bfcf595ae3342bedd93_Playground-6.png",   w: 1000, h: 1000, name: "Nijimu",              desc: "2026 | Website, Interactive Experience", url: "https://weieach.github.io/nijimu/", newTab: true },
+    { src: "https://cdn.prod.website-files.com/69954c8c0f8eb8435c19885c/6a615bfccde09d40acc84507_Playground-7.png",   w: 1000, h: 1000, name: "Orbit of Emotion",    desc: "2025 | Interactive Experience",          url: "#" },
+    { src: "https://cdn.prod.website-files.com/69954c8c0f8eb8435c19885c/6a615bfd5d480003d2a684b4_Playground-8.png",   w: 1000, h: 1500, name: "Speedform",           desc: "2025 | Form Study",                      url: "#" },
+    { src: "https://cdn.prod.website-files.com/69954c8c0f8eb8435c19885c/6a615bfca6e0c118244768d1_Playground-9.png",   w: 1000, h: 1500, name: "Collage-01",          desc: "Photography",                            url: "#" },
+    { src: "https://cdn.prod.website-files.com/69954c8c0f8eb8435c19885c/6a615bfd79d9b5b6c1ff3761_Playground-10.png",  w: 1000, h: 1500, name: "Collage-02",          desc: "Photography",                            url: "#" },
+    { src: "https://cdn.prod.website-files.com/69954c8c0f8eb8435c19885c/6a615bfcc57d9851e84de2a5_Playground-11.png",  w: 1000, h: 1500, name: "Collage-03",          desc: "Photography",                            url: "#" },
+    { src: "https://cdn.prod.website-files.com/69954c8c0f8eb8435c19885c/6a615bfc43e1172472097e6f_Playground-12.png",  w: 1000, h: 1500, name: "Vroom-vroom",         desc: "2025 | Formula-e RC Car",                url: "#" }
   ];
 
   /* ---------- Config ---------- */
@@ -180,6 +180,19 @@
         (seed.name ? `<div class="pg-name">${escapeHtml(seed.name)}</div>` : "") +
         (seed.desc ? `<div class="pg-desc">${escapeHtml(seed.desc)}</div>` : "");
       el.appendChild(ov);
+    }
+
+    if (seed.url) {
+      el.style.cursor = "pointer";
+      el.addEventListener("click", function () {
+        // A drag ends with a click event too — only navigate on a clean tap.
+        if (moved) return;
+        if (seed.newTab) {
+          window.open(seed.url, "_blank", "noopener");
+        } else {
+          window.location.href = seed.url;
+        }
+      });
     }
 
     world.appendChild(el);
