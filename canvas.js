@@ -50,7 +50,9 @@
   let velX = 0, velY = 0;
   let dragging = false;
   let lastX = 0, lastY = 0;
+  let downX = 0, downY = 0;
   let moved = false;
+  const CLICK_THRESHOLD = 6;
 
   const colBottom = new Map();
   const colTop = new Map();
@@ -250,6 +252,8 @@
     velX = velY = 0;
     lastX = e.clientX;
     lastY = e.clientY;
+   downX = e.clientX;
+   downY = e.clientY;
     mount.style.cursor = "grabbing";
     mount.setPointerCapture && mount.setPointerCapture(e.pointerId);
   }
@@ -258,7 +262,9 @@
     if (!dragging) return;
     const dx = e.clientX - lastX;
     const dy = e.clientY - lastY;
-    if (Math.abs(dx) > 2 || Math.abs(dy) > 2) moved = true;
+    const totalDx = e.clientX - downX;
+    const totalDy = e.clientY - downY;
+    if (Math.abs(totalDx) > CLICK_THRESHOLD || Math.abs(totalDy) > CLICK_THRESHOLD) moved = true;
     offsetX += dx;
     offsetY += dy;
     velX = dx;
