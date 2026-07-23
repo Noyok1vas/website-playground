@@ -19,7 +19,7 @@
      ========================================================== */
   const SEED_DATA = [
     { src: "https://cdn.prod.website-files.com/69954c8c0f8eb8435c19885c/6a615bfd5d480003d2a684b1_Playground-1.png",   w: 1000, h: 1000, name: "Ossyn",               desc: "2024 | Lighting",                        url: "https://yokis.space/playground/ossyn" },
-    { src: "https://cdn.prod.website-files.com/69954c8c0f8eb8435c19885c/6a615bfc4744edda3224da25_Playground-2.png",   w: 1000, h: 1000, name: "Morphē",               desc: "2025 | Bluetooth Mouse",                url: "https://yokis.space/playground/morph" },
+    { src: "https://cdn.prod.website-files.com/69954c8c0f8eb8435c19885c/6a615bfc4744edda3224da25_Playground-2.png",   w: 1000, h: 1000, name: "Morphē",              desc: "2025 | Bluetooth Mouse",                 url: "https://yokis.space/playground/morph" },
     { src: "https://cdn.prod.website-files.com/69954c8c0f8eb8435c19885c/6a615bfc409f1fdb7f5d3609_Playground-3.png",   w: 1000, h: 1000, name: "Soma",                desc: "2025 | CMF Strategy",                    url: "#" },
     { src: "https://cdn.prod.website-files.com/69954c8c0f8eb8435c19885c/6a615bfc22dad98433ad5e54_Playground-4.png",   w: 1000, h: 1000, name: "YANG Design CMF Lab", desc: "2024 | CMF Internship",                  url: "#" },
     { src: "https://cdn.prod.website-files.com/69954c8c0f8eb8435c19885c/6a615bfc09a38d01e4350854_Playground-5.png",   w: 1000, h: 1000, name: "Collage-04",          desc: "2025 | Form Study",                      url: "#" },
@@ -29,7 +29,8 @@
     { src: "https://cdn.prod.website-files.com/69954c8c0f8eb8435c19885c/6a615bfca6e0c118244768d1_Playground-9.png",   w: 1000, h: 1500, name: "Collage-01",          desc: "Photography",                            url: "#" },
     { src: "https://cdn.prod.website-files.com/69954c8c0f8eb8435c19885c/6a615bfd79d9b5b6c1ff3761_Playground-10.png",  w: 1000, h: 1500, name: "Collage-02",          desc: "Photography",                            url: "#" },
     { src: "https://cdn.prod.website-files.com/69954c8c0f8eb8435c19885c/6a615bfcc57d9851e84de2a5_Playground-11.png",  w: 1000, h: 1500, name: "Collage-03",          desc: "Photography",                            url: "#" },
-    { src: "https://cdn.prod.website-files.com/69954c8c0f8eb8435c19885c/6a615bfc43e1172472097e6f_Playground-12.png",  w: 1000, h: 1500, name: "Vroom-vroom",         desc: "2025 | Formula-e RC Car",                url: "#" }
+    { src: "https://cdn.prod.website-files.com/69954c8c0f8eb8435c19885c/6a615bfc43e1172472097e6f_Playground-12.png",  w: 1000, h: 1500, name: "Vroom-vroom",         desc: "2025 | Formula-e RC Car",                url: "#" },
+    { src: "https://cdn.prod.website-files.com/69954c8c0f8eb8435c19885c/6a61df0883fdca4fd1e924cc_Playground-13.png",  w: 1000, h: 1000, name: "Between Us",          desc: "2025 | Scent Branding",                  url: "yokis.space/playground/betweenus" }
   ];
 
   /* ---------- Config ---------- */
