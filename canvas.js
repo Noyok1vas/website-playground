@@ -281,7 +281,7 @@
     const css = `
       #playground-canvas {
         position: fixed; inset: 0; overflow: hidden;
-        touch-action: none; cursor: grab; background: #f0f0f0;
+        touch-action: none; cursor: grab; background: #141414;
         user-select: none; -webkit-user-select: none;
       }
       .pg-world {
