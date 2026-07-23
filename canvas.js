@@ -18,7 +18,7 @@
      w/h = original image dimensions (ratio must be correct).
      ========================================================== */
   const SEED_DATA = [
-    { src: "https://cdn.prod.website-files.com/69954c8c0f8eb8435c19885c/6a615bfd5d480003d2a684b1_Playground-1.png",   w: 1000, h: 1000, name: "Ossyn",               desc: "2024 | Lighting",                        url: "https://weieach.github.io/nijimu/" },
+    { src: "https://cdn.prod.website-files.com/69954c8c0f8eb8435c19885c/6a615bfd5d480003d2a684b1_Playground-1.png",   w: 1000, h: 1000, name: "Ossyn",               desc: "2024 | Lighting",                        url: "https://yokis.space/playground/ossyn" },
     { src: "https://cdn.prod.website-files.com/69954c8c0f8eb8435c19885c/6a615bfc4744edda3224da25_Playground-2.png",   w: 1000, h: 1000, name: "Morph",               desc: "2025 | Bluetooth Mouse",                 url: "#" },
     { src: "https://cdn.prod.website-files.com/69954c8c0f8eb8435c19885c/6a615bfc409f1fdb7f5d3609_Playground-3.png",   w: 1000, h: 1000, name: "Soma",                desc: "2025 | CMF Strategy",                    url: "#" },
     { src: "https://cdn.prod.website-files.com/69954c8c0f8eb8435c19885c/6a615bfc22dad98433ad5e54_Playground-4.png",   w: 1000, h: 1000, name: "YANG Design CMF Lab", desc: "2024 | CMF Internship",                  url: "#" },
