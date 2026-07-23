@@ -186,7 +186,7 @@
 
     if (seed.url) {
       el.style.cursor = "pointer";
-      el.addEventListener("click", function () {
+      el.addEventListener("pointerup", function () {
         // A drag ends with a click event too — only navigate on a clean tap.
         if (moved) return;
         if (seed.newTab) {
@@ -255,7 +255,6 @@
    downX = e.clientX;
    downY = e.clientY;
     mount.style.cursor = "grabbing";
-    mount.setPointerCapture && mount.setPointerCapture(e.pointerId);
   }
 
   function onMove(e) {
