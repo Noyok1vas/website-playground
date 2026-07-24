@@ -1,6 +1,7 @@
 /* ============================================================
-   Simple Vertical Infinite Masonry
+   Simple Vertical Infinite Masonry — Responsive
    - 仅纵向向下无尽滚动（滚轮 / 触控板 / 触摸拖拽）
+   - 响应式列数：桌面 4 列 / 平板 3 列 / 手机 2 列
    - 边缘触发生成 + 视口虚拟化
    - 无 hover overlay、无点击跳转、无缩放、无横向平移
    Mount point:  <div id="playground-canvas"></div>
@@ -10,6 +11,8 @@
 
   /* ==========================================================
      SEED DATA — w/h 必须是原图比例
+     ⚠️ Playground-8 / -10 / -11 的 URL hash 段长度与其它不一致，
+        若显示破图请回 Webflow Assets 重新复制完整链接。
      ========================================================== */
   const SEED_DATA = [
     { src: "https://cdn.prod.website-files.com/69954c8c0f8eb8435c19885c/6a615bfd5d480003d2a684b1_Playground-1.png",  w: 1000, h: 1000 },
@@ -27,21 +30,35 @@
   ];
 
   /* ---------- Config ---------- */
-  const COL_WIDTH = 300;
-  const GUTTER = 24;
-  const FRICTION = 0.92;
-  const BUFFER = 600;
+  const MIN_COLS = 2;
+  const MAX_COLS = 4;
+
+  const BP_MOBILE = 640;      // < 640  → 2 列
+  const BP_TABLET = 1024;     // < 1024 → 3 列，其余 4 列
+
+  const GUTTER_DESKTOP = 24;
+  const GUTTER_MOBILE = 12;
+  const PAD_DESKTOP = 24;     // 画布左右留白
+  const PAD_MOBILE = 12;
+
+  const FRICTION = 0.92;      // 惯性衰减
+  const BUFFER = 600;         // 视口外预生成 / 保留范围
   const MIN_VELOCITY = 0.05;
   const MIN_SEED_DISTANCE = 2200;
+  const RESIZE_DEBOUNCE = 150;
 
   /* ---------- State ---------- */
   let seeds = [];
   let mount, world;
-  let offsetY = 0;      // 只有纵向
+  let offsetY = 0;            // 只有纵向
   let velY = 0;
   let dragging = false;
   let lastY = 0;
-  let cols = 0;         // 列数，随视口宽度算
+
+  let cols = 0;
+  let colWidth = 300;
+  let gutter = GUTTER_DESKTOP;
+  let sidePad = PAD_DESKTOP;
 
   const colBottom = new Map();
   const blocks = [];
@@ -67,13 +84,26 @@
     requestAnimationFrame(loop);
   }
 
-  /* ---------- 列布局：横向居中，不可横向移动 ---------- */
+  /* ---------- 响应式列布局 ----------
+     按视口宽度选列数（2–4），再反推列宽填满可用区域。 */
+  function targetCols(vw) {
+    if (vw < BP_MOBILE) return 2;
+    if (vw < BP_TABLET) return 3;
+    return 4;
+  }
+
   function layoutColumns() {
-    const step = COL_WIDTH + GUTTER;
     const vw = mount.clientWidth;
-    cols = Math.max(1, Math.floor((vw + GUTTER) / step));
-    const totalW = cols * step - GUTTER;
-    world.style.left = Math.round((vw - totalW) / 2) + "px";
+    const next = Math.max(MIN_COLS, Math.min(MAX_COLS, targetCols(vw)));
+
+    gutter = vw < BP_MOBILE ? GUTTER_MOBILE : GUTTER_DESKTOP;
+    sidePad = vw < BP_MOBILE ? PAD_MOBILE : PAD_DESKTOP;
+
+    const avail = vw - sidePad * 2;
+    colWidth = Math.max(1, Math.floor((avail - gutter * (next - 1)) / next));
+
+    cols = next;
+    world.style.left = sidePad + "px";
   }
 
   /* ---------- 视口（世界坐标，仅纵向） ---------- */
@@ -85,7 +115,9 @@
     };
   }
 
-  /* ---------- 去重分散：只按纵向距离算 ---------- */
+  /* ---------- 去重分散 ----------
+     遍历种子池，算每张图「最近的同款副本距离」，取最大者。
+     超过 MIN_SEED_DISTANCE 的都算等价，随机选，保证布局有变化。 */
   function pick(x, y) {
     let best = [];
     let bestDist = -1;
@@ -115,7 +147,7 @@
 
   /* ---------- 只向下生成 ---------- */
   function fill() {
-    const step = COL_WIDTH + GUTTER;
+    const step = colWidth + gutter;
     const vp = worldViewport();
 
     for (let c = 0; c < cols; c++) {
@@ -123,9 +155,9 @@
       while (colBottom.get(c) < vp.bot) {
         const y = colBottom.get(c);
         const seed = pick(c * step, y);
-        const h = Math.round((COL_WIDTH / seed.w) * seed.h);
-        addBlock(c * step, y, COL_WIDTH, h, seed);
-        colBottom.set(c, y + h + GUTTER);
+        const h = Math.round((colWidth / seed.w) * seed.h);
+        addBlock(c * step, y, colWidth, h, seed);
+        colBottom.set(c, y + h + gutter);
       }
     }
   }
@@ -162,6 +194,17 @@
     }
   }
 
+  /* ---------- 列宽变化后整体重建 ---------- */
+  function rebuild() {
+    for (const b of blocks) if (b.mounted) b.el.remove();
+    blocks.length = 0;
+    colBottom.clear();
+    offsetY = 0;
+    velY = 0;
+    fill();
+    render();
+  }
+
   /* ---------- Render ---------- */
   function render() {
     world.style.transform = `translateY(${offsetY}px)`;
@@ -193,8 +236,10 @@
     mount.addEventListener("pointerdown", onDown);
     window.addEventListener("pointermove", onMove);
     window.addEventListener("pointerup", onUp);
+    window.addEventListener("pointercancel", onUp);
     mount.addEventListener("wheel", onWheel, { passive: false });
     window.addEventListener("resize", onResize);
+    window.addEventListener("orientationchange", onResize);
   }
 
   function onDown(e) {
@@ -223,6 +268,7 @@
     mount.style.cursor = "grab";
   }
 
+  // 只平移，不缩放。preventDefault 同时拦掉 Mac 捏合触发的浏览器页面缩放。
   function onWheel(e) {
     e.preventDefault();
     offsetY -= e.deltaY;
@@ -233,10 +279,13 @@
     render();
   }
 
+  let resizeTimer;
   function onResize() {
-    layoutColumns();
-    fill();
-    recycle();
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(function () {
+      layoutColumns();
+      rebuild();   // 列宽随视口连续变化，无条件重建
+    }, RESIZE_DEBOUNCE);
   }
 
   /* ---------- Styles ---------- */
